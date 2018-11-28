@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class DisplayWord : MonoBehaviour {
 
     private string word;
@@ -12,17 +13,23 @@ public class DisplayWord : MonoBehaviour {
 
     public void SetWord(string w)
     {
-        this.word = w;
+        word = w;
+        word = word.ToUpper();
+        Set_wordDict();
     }
 
     private void Set_wordDict()
     {
+        int offset = 0;
         foreach (char c in this.word)
         {
-            GameObject myOject = (LoadLetter.GetLetter(c));
-            
-            myOject.transform.SetParent(this.transform);
-            this.wordDict.Add(c, myOject);
+            GameObject myObject = (LoadLetter.GetLetter(c));
+            myObject.transform.SetParent(this.transform);
+            Vector3 pos = initPosition.transform.position;
+            pos[0] = pos[0] + 90 * offset;
+            offset++;
+            myObject.transform.position = pos;
+            wordDict.Add(c, myObject);
         }
     }
 }
