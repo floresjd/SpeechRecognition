@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class DisplayWord : MonoBehaviour {
+public class DisplayWord : MonoBehaviour
+{
 
     private string word;
-    private Dictionary<char, GameObject> wordDict = new Dictionary<char, GameObject>();
+    private List<GameObjectStruct> wordList = new List<GameObjectStruct>();
+    private List<Vector3> initPositions = new List<Vector3>();
 
     public GameObject initPosition;
 
@@ -23,13 +24,36 @@ public class DisplayWord : MonoBehaviour {
         int offset = 0;
         foreach (char c in this.word)
         {
-            GameObject myObject = (LoadLetter.GetLetter(c));
-            myObject.transform.SetParent(this.transform);
+            GameObjectStruct myGameObjectStruct = new GameObjectStruct { myGameObject = LoadLetter.GetLetter(c) };
+            myGameObjectStruct.myGameObject.transform.SetParent(this.transform);
+            //GameObjectStruct obj = new GameObjectStruct { myGameObject =  gobj};
             Vector3 pos = initPosition.transform.position;
             pos[0] = pos[0] + 90 * offset;
             offset++;
-            myObject.transform.position = pos;
-            wordDict.Add(c, myObject);
+            myGameObjectStruct.myGameObject.transform.position = pos;
+            initPositions.Add(pos);
+            wordList.Add(myGameObjectStruct);
+        }
+
+        //Now Randomize initPostions
+        for (int i = 0; i < initPositions.Count; i++)
+        {
+            Vector3 temp = initPositions[i];
+            int randomIndex = Random.Range(i, initPositions.Count);
+            initPositions[i] = initPositions[randomIndex];
+            initPositions[randomIndex] = temp;
+        }
+
+        for (int i = 0; i < wordList.Count; i++)
+        {
+            wordList[i].myGameObject.transform.position = initPositions[i];
         }
     }
+
+}
+
+public struct GameObjectStruct
+{
+    public GameObject myGameObject;
+    public Vector3 initPos;
 }
