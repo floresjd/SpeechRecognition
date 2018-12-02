@@ -6,7 +6,9 @@ using UnityEngine.Windows.Speech;
 
 public class SpeechRecognitionEngine : MonoBehaviour
 {
-    public string[] keywords = new string[] { "right", "left", "stop", "application"};
+    public HandleWordDisplay HandleWordDisplay;
+
+    public string[] keywords = { "" };
     public ConfidenceLevel confidence = ConfidenceLevel.High;
 
     protected PhraseRecognizer recognizer;
@@ -14,7 +16,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     private void Start()
     {
-
+        keywords[0] = WordList.WordList_[0];
         if (keywords != null)
         {
             recognizer = new KeywordRecognizer(keywords, confidence);
@@ -27,7 +29,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
     private void Recognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         word = args.text;
-        
+        HandleWordDisplay.ResetWordDisplay();
     }   
 
     private void Update()

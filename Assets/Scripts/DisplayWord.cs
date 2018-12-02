@@ -31,6 +31,7 @@ public class DisplayWord : MonoBehaviour
             pos[0] = pos[0] + 90 * offset;
             offset++;
             myGameObjectStruct.myGameObject.transform.position = pos;
+            myGameObjectStruct.initPos = pos;
             initPositions.Add(pos);
             wordList.Add(myGameObjectStruct);
         }
@@ -47,6 +48,14 @@ public class DisplayWord : MonoBehaviour
         for (int i = 0; i < wordList.Count; i++)
         {
             wordList[i].myGameObject.transform.position = initPositions[i];
+        }
+    }
+
+    public void ResetWord()
+    {
+        for (int i = 0; i < initPositions.Count; i++)
+        {
+            wordList[i].myGameObject.transform.position = wordList[i].initPos;
         }
     }
 
