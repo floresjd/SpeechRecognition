@@ -14,9 +14,17 @@ public class SpeechRecognitionEngine : MonoBehaviour
     protected PhraseRecognizer recognizer;
     protected string word = "";
 
+    public void WhichWord(int i)
+    {
+        keywords[0] = WordList.WordList_[i];
+        HandleWordDisplay.WhichWord(keywords[0]);
+    }
+
+
     private void Start()
     {
-        keywords[0] = WordList.WordList_[0];
+        WhichWord(2);
+        HandleWordDisplay.Display();
         if (keywords != null)
         {
             recognizer = new KeywordRecognizer(keywords, confidence);
@@ -29,13 +37,8 @@ public class SpeechRecognitionEngine : MonoBehaviour
     private void Recognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         word = args.text;
-        HandleWordDisplay.ResetWordDisplay();
+        HandleWordDisplay.ResetDisplay();
     }   
-
-    private void Update()
-    {
-
-    }
 
     private void OnApplicationQuit()
     {

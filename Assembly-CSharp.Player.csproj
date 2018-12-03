@@ -855,6 +855,7 @@
     <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\HandleWordDisplay.cs" />
     <Compile Include="Assets\Scripts\LoadLetter.cs" />
+    <Compile Include="Assets\Scripts\LoadSR.cs" />
     <Compile Include="Assets\Scripts\SpeechRecognitionEngine.cs" />
     <Compile Include="Assets\Scripts\WordList.cs" />
   </ItemGroup>

@@ -7,14 +7,25 @@ public class HandleWordDisplay : MonoBehaviour {
 
     public DisplayWord DisplayWord;
 
-	// Use this for initialization
-	void Start () {
-        DisplayWord.SetWord(WordList.WordList_[0]);
-	}
+    public void WhichWord(string w)
+    {
+        DisplayWord.SetWord(w);
+    }
 
-    public void ResetWordDisplay()
+    // Use this for initialization
+    public void Display()
+    {
+        DisplayWord.LoadWord(WordList.WordList_[0]);
+    }
+        
+    public void ResetDisplay()
     {
         DisplayWord.ResetWord();
+    }
+
+    public void RemoveDisplay()
+    {
+        DisplayWord.DeleteWord();
     }
 
 }

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DisplayWord : MonoBehaviour
 {
-
     private string word;
     private List<GameObjectStruct> wordList = new List<GameObjectStruct>();
     private List<Vector3> initPositions = new List<Vector3>();
@@ -13,6 +12,11 @@ public class DisplayWord : MonoBehaviour
     public GameObject initPosition;
 
     public void SetWord(string w)
+    {
+        word = w;
+    }
+
+    public void LoadWord(string w)
     {
         word = w;
         word = word.ToUpper();
@@ -57,6 +61,15 @@ public class DisplayWord : MonoBehaviour
         {
             wordList[i].myGameObject.transform.position = wordList[i].initPos;
         }
+    }
+
+    public void DeleteWord()
+    {
+        for (int i = 0; i < wordList.Count; i++)
+        {
+            Destroy(wordList[i].myGameObject);
+        }
+        wordList.Clear();
     }
 
 }

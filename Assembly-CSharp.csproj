@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{830C7E36-7F0C-8C94-B0FC-BE479923A596}</ProjectGuid>
+    <ProjectGuid>{B24BD405-8BCE-AEC3-95B6-C054B319FAFF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -64,19 +64,20 @@
     <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\HandleWordDisplay.cs" />
     <Compile Include="Assets\Scripts\LoadLetter.cs" />
+    <Compile Include="Assets\Scripts\LoadSR.cs" />
     <Compile Include="Assets\Scripts\SpeechRecognitionEngine.cs" />
     <Compile Include="Assets\Scripts\WordList.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Jdan/Documents/UCLA/2018-2019/fall18/ece180da/project/SpeechRecognitionv3/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Jdan/Documents/UCLA/2018-2019/fall18/ece180da/project/SpeechRecognition/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Jdan/Documents/UCLA/2018-2019/fall18/ece180da/project/SpeechRecognitionv3/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Jdan/Documents/UCLA/2018-2019/fall18/ece180da/project/SpeechRecognition/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Editor">
-      <HintPath>C:/Users/Jdan/Documents/UCLA/2018-2019/fall18/ece180da/project/SpeechRecognitionv3/Library/ScriptAssemblies/Editor.dll</HintPath>
+      <HintPath>C:/Users/Jdan/Documents/UCLA/2018-2019/fall18/ece180da/project/SpeechRecognition/Library/ScriptAssemblies/Editor.dll</HintPath>
     </Reference>
     <Reference Include="XiaomiSupport">
-      <HintPath>C:/Users/Jdan/Documents/UCLA/2018-2019/fall18/ece180da/project/SpeechRecognitionv3/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
+      <HintPath>C:/Users/Jdan/Documents/UCLA/2018-2019/fall18/ece180da/project/SpeechRecognition/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/MetroSupport/Tools/UnityEngine.AIModule.dll</HintPath>
