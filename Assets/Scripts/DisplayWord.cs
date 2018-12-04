@@ -24,15 +24,16 @@ public class DisplayWord : MonoBehaviour
 
     private void Set_wordDict()
     {
-        print(word);
+        //print(word);
         int offset = 0;
         foreach (char c in this.word)
         {
             GameObjectStruct myGameObjectStruct = new GameObjectStruct { myGameObject = LoadLetter.GetLetter(c) };
+            myGameObjectStruct.myGameObject.transform.localScale -= new Vector3(0.5f,0.5f,0);
             myGameObjectStruct.myGameObject.transform.SetParent(this.transform);
             //GameObjectStruct obj = new GameObjectStruct { myGameObject =  gobj};
             Vector3 pos = initPosition.transform.position;
-            pos[0] = pos[0] + 90 * offset;
+            pos[0] = pos[0] + 42 * offset;
             offset++;
             myGameObjectStruct.myGameObject.transform.position = pos;
             myGameObjectStruct.initPos = pos;
