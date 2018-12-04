@@ -357,6 +357,11 @@ Prefab:
       propertyPath: m_Name
       value: SpeechRecognition
       objectReference: {fileID: 0}
+    - target: {fileID: 114890691125592210, guid: 6b59d8b7fc52f804eaf1537fe80c7aea,
+        type: 2}
+      propertyPath: results
+      value: 
+      objectReference: {fileID: 1674070724}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b59d8b7fc52f804eaf1537fe80c7aea, type: 2}
   m_IsPrefabParent: 0
@@ -470,7 +475,7 @@ GameObject:
   - component: {fileID: 1103965941}
   - component: {fileID: 1103965942}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ToggleSpeechRecognition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,7 +505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 366ff8d42f3fd9f4081107a70c8a325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeechRecognition: {fileID: 1107237715}
 --- !u!1 &1107237715
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,12 +538,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HandleWordDisplay: {fileID: 440079100}
+  confidence: 0
   keywords:
   - right
   - left
   - stop
   - application
-  confidence: 0
+  results: {fileID: 1674070724}
 --- !u!114 &1107237717
 MonoBehaviour:
   m_ObjectHideFlags: 0

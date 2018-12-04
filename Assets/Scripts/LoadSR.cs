@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LoadSR : MonoBehaviour {
 
-    public GameObject SpeechRecognition;
+    //public GameObject SpeechRecognition;
 	// Use this for initialization
 	void Start () {
-        SpeechRecognition.GetComponent<SpeechRecognitionEngine>().enabled = false;
+        //SpeechRecognition.GetComponent<SpeechRecognitionEngine>().enabled = false;
     }
 	
 	// Update is called once per frame

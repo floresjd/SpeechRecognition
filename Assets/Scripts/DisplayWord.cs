@@ -16,15 +16,15 @@ public class DisplayWord : MonoBehaviour
         word = w;
     }
 
-    public void LoadWord(string w)
+    public void LoadWord()
     {
-        word = w;
         word = word.ToUpper();
         Set_wordDict();
     }
 
     private void Set_wordDict()
     {
+        print(word);
         int offset = 0;
         foreach (char c in this.word)
         {
@@ -55,6 +55,7 @@ public class DisplayWord : MonoBehaviour
         }
     }
 
+    //Reset the original position of the word
     public void ResetWord()
     {
         for (int i = 0; i < initPositions.Count; i++)
